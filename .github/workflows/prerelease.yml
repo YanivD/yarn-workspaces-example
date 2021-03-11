@@ -12,17 +12,42 @@ jobs:
   Publish:
     name: PreRelease
     runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/master'
     steps:
-      - name: Extract branch name
-        run: echo "Deploying to production server on branch $GITHUB_REF"
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+          # pulls all commits (needed for lerna / semantic release to correctly version)
+          fetch-depth: '0'
 
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
 
-      - name: aaa
-        run: echo running on branch ${GITHUB_REF##*/}
-      - name: bbbb
-        run: echo running on branch ${steps.extract_branch.outputs.branch}
+      - name: Configure CI Git User
+        run: |
+          git config --global user.name '@aspecto-system'
+          git config --global user.email 'aspecto-system@users.noreply.github.com'
+
+      - name: Install Packages
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Authenticate with Registry
+        run: |
+          yarn logout
+          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish package
+        run: |
+          yarn publish:ci:prerelease --preid ${{ GITHUB_REF##*/ }} ${{ github.event.inputs.semanticVersion }}
+        env:
+          GH_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+
