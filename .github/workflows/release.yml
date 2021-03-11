@@ -46,7 +46,7 @@ jobs:
           NPM_TOKEN: 3270637f-d967-426c-bfbd-cf2d01b770a1
 
       - name: Publish package
-        run: yarn publish:ci:prerelease --preid $(echo ${GITHUB_REF##*/}) ${{ github.event.inputs.semanticVersion }}
+        run: yarn publish:ci ${{ github.event.inputs.semanticVersion }}
         env:
           GH_TOKEN: ${{ secrets.ADMIN_TOKEN }}
 
