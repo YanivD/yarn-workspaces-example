@@ -6,6 +6,7 @@
   ],
   "scripts": {
     "test": "lerna run test --since",
+    "build": "lerna run build",
     "new-version": "lerna version --conventional-commits --yes",
     "publish:ci": "lerna publish --yes --conventionalCommits",
     "publish:ci-prerelease": "lerna publish --yes --canary"
