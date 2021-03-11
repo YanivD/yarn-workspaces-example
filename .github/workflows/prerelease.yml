@@ -43,7 +43,7 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
           npm whoami
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: 3270637f-d967-426c-bfbd-cf2d01b770a1
 
       - name: Publish package
         run: |
