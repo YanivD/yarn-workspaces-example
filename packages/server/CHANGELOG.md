@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.3](https://github.com/YanivD/yarn-workspaces-example/compare/yanivtestdemo-server@2.1.2...yanivtestdemo-server@2.1.3) (2021-03-11)
+
+
+### Features
+
+* server ([538fa36](https://github.com/YanivD/yarn-workspaces-example/commit/538fa36))
+
+
+
+
+
 ## [2.1.2](https://github.com/YanivD/yarn-workspaces-example/compare/yanivtestdemo-server@2.1.1...yanivtestdemo-server@2.1.2) (2021-03-11)
 
 **Note:** Version bump only for package yanivtestdemo-server
