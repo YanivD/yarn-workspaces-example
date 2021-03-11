@@ -11,6 +11,7 @@ on:
 jobs:
   Publish:
     name: PreRelease
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - name: checkout
