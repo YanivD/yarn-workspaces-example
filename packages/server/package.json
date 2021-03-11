@@ -1,10 +1,14 @@
 {
-  "name": "@walnut/server",
-  "version": "1.0.0",
+  "name": "yanivtestdemo-server",
+  "version": "2.1.2",
   "main": "index.js",
-  "license": "MIT",
+  "license": "Apache-2.0",
+  "private": false,
   "dependencies": {
-    "@walnut/common": "1.0.0",
-    "graphql-yoga": "^1.14.7"
+    "graphql-yoga": "^1.14.7",
+    "yanivtestdemo-common": "^2.0.9"
+  },
+  "scripts": {
+    "test": "echo testing server with version: $npm_package_version"
   }
 }

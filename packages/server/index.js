@@ -1,3 +1,6 @@
-const commonFunction = require("@walnut/common");
+const commonFunction = require("yanivtestdemo-common");
 
+commonFunction();
+commonFunction();
+commonFunction();
 commonFunction();
