@@ -47,7 +47,7 @@ jobs:
 
       - name: Publish package
         run: |
-          yarn publish:ci:prerelease --preid ${ GITHUB_REF##*/ } ${{ github.event.inputs.semanticVersion }}
+          yarn publish:ci:prerelease --preid ${{ GITHUB_REF##*/ }} ${{ github.event.inputs.semanticVersion }}
         env:
           GH_TOKEN: ${{ secrets.ADMIN_TOKEN }}
 
