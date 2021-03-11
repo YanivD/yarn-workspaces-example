@@ -15,6 +15,5 @@ jobs:
     if: github.ref != 'refs/heads/master'
     steps:
       - name: Extract branch name
-        run: echo '${github.ref}'
-        id: extract_branch
+        run: echo "Deploying to production server on branch $GITHUB_REF"
 
