@@ -43,7 +43,7 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
           npm whoami
         env:
-          NPM_TOKEN: 70a17096-d5fa-41ad-879a-eeb4e6bfb106
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish package
         run: yarn publish:ci:prerelease --preid $(echo ${GITHUB_REF##*/}) ${{ github.event.inputs.semanticVersion }}
