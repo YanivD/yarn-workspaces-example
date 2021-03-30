@@ -28,6 +28,4 @@ jobs:
 
       - name: Publish package
         run: yarn publish:ci:prerelease --preid $(echo ${GITHUB_REF##*/}) patch
-        env:
-          GH_TOKEN: ${{ secrets.ADMIN_TOKEN }}
 
