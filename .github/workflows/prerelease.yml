@@ -10,9 +10,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-        with:
+    #    with:
           # pulls all commits (needed for lerna / semantic release to correctly version)
-          fetch-depth: '0'
+    #      fetch-depth: '0'
 
       - name: Install Packages
         run: yarn install
@@ -28,6 +28,4 @@ jobs:
 
       - name: Publish package
         run: yarn publish:ci:prerelease --preid $(echo ${GITHUB_REF##*/}) patch
-        env:
-          GH_TOKEN: ${{ secrets.ADMIN_TOKEN }}
 
