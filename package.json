@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "lerna":"lerna",
     "test": "lerna run test --since",
     "build": "lerna run build",
     "new-version": "lerna version --conventional-commits --yes",
