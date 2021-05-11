@@ -1,6 +1,6 @@
 {
   "name": "yanivtestdemo-common",
-  "version": "0.0.1-yaniv",
+  "version": "6.0.0",
   "main": "index.js",
   "license": "Apache-2.0",
   "private": false,
