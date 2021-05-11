@@ -3,4 +3,4 @@ module.exports = () => {
 
 
 };
-console.log('');
+console.log('123');
