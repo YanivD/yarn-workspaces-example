@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.0.1](https://github.com/YanivD/yarn-workspaces-example/compare/yanivtestdemo-common@0.0.1-yaniv...yanivtestdemo-common@6.0.1) (2021-05-11)
+
+
+### Features
+
+* change common ([fb51c00](https://github.com/YanivD/yarn-workspaces-example/commit/fb51c00))
+
+
+
+
+
 ## [0.0.1-yaniv](https://github.com/YanivD/yarn-workspaces-example/compare/yanivtestdemo-common@2.3.2...yanivtestdemo-common@0.0.1-yaniv) (2021-05-11)
 
 **Note:** Version bump only for package yanivtestdemo-common
